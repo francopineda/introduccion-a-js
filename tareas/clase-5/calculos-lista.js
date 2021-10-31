@@ -88,3 +88,4 @@ $botonLimpiar.onclick = function () {
     document.querySelector("#numero-grande").textContent = "El numero más grande es...";
     document.querySelector("#numero-frecuente").textContent = "El número más frecuente es...";
 }
+
