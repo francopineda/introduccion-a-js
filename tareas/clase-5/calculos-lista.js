@@ -52,18 +52,15 @@ function calcularMenorNumero(array) {
 
 //numero más frecuente
 function calcularNumeroMasFrecuente(array) {
-    let numeroMasFrecuente;
+    let numeroMasFrecuente = 0;
 
-    for (let i = 0; i < array.length; i++) {
-        let contador = 0;
-
-        for (let j = 0; j < array.length; j++) {
-            if(array[i] === array[j]) {
-                contador++
-                numeroMasFrecuente = array[i];
-            };
-        };
-    };
+    for (let i=0; i < array.length; i++){
+        for (let j= i + 1; j < array.length; j++){
+            if (array[i] === array[j]){
+                numeroMasFrecuente = array[i]
+            }
+        }
+    }
 
     return numeroMasFrecuente;
 }
@@ -75,8 +72,6 @@ $botonCalcular.onclick = function () {
     const $numeros = document.querySelectorAll(".numeros");
 
     let numerosACalcular = NodeListToArray($numeros);
-
-    console.log(numerosACalcular);
 
     document.querySelector("#promedio").textContent = `El promedio es ${calcularPromedio(numerosACalcular)}`;
     document.querySelector("#numero-pequenio").textContent = `El número más pequeño es ${calcularMenorNumero(numerosACalcular)}`;
